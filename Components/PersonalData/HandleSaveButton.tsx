@@ -9,7 +9,7 @@ interface HandleSaveButtonProps {
 const HandleSaveButton = ({ onPress, isChanged }: HandleSaveButtonProps) => {
     return (
         <TouchableOpacity
-            className={`absolute bottom-6 w-11/12 h-16 items-center justify-center bg-[#767676] rounded-xl shadow-xl ${isChanged ? 'bg-[#767676]' : 'bg-gray-400'}`}
+            className={`absolute bottom-6 w-11/12 h-16 items-center justify-center bg-[#fff700] rounded-xl shadow-xl ${isChanged ? 'bg-[#fff700]' : 'bg--400'}`}
             onPress={onPress}
             disabled={!isChanged}
         >

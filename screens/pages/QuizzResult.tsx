@@ -1,10 +1,22 @@
-import { RouteProp, useFocusEffect, useNavigation, } from '@react-navigation/native';
+import {
+	RouteProp,
+	useFocusEffect,
+	useNavigation,
+} from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, TouchableOpacity, View, } from 'react-native';
+import {
+	Image,
+	SafeAreaView,
+	Text,
+	TouchableOpacity,
+	View,
+} from 'react-native';
 import { axiosLogin } from '../../services/axios';
 import { getConsumerLevel } from '../../utils/getConsumerLevel';
-import { NavigationProp, RootStackParamList, } from '../../utils/types/navigation';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+	NavigationProp,
+	RootStackParamList,
+} from '../../utils/types/navigation';
 
 type QuizResultScreenRouteProp = RouteProp<RootStackParamList, 'QuizzResult'>;
 
@@ -17,62 +29,58 @@ const QuizzResult = ({ route }: QuizResultProps) => {
 	const navigation = useNavigation<NavigationProp>();
 
 	return (
-		<SafeAreaView className="flex-1 items-center ">
-
-			<View className="my-8">
+		<SafeAreaView className="h-full">
+			<View className="mt-5 items-center">
 				<Text
-					className="text-[#767676] text-3xl text-center"
+					className="text-yellow-500 text-3xl"
 					style={{ fontFamily: 'poppins-semi-bold' }}
 				>
-					Parabéns!
+					Parabéns! Perfil criado com sucesso!
 				</Text>
 			</View>
 
-			<View className="flex w-11/12 items-center">
-				<View>
-					<Text
-						style={{ fontFamily: 'poppins-semi-bold' }}
-						className="text-[#767676] text-lg"
-					>
-						{' '}
-						Você é um{' '}
-						<Text className="text-[#7CC77F] text-lg">
-							{getConsumerLevel(score)}
-						</Text>
-						!
-					</Text>
-				</View>
-
-				<View className="my-8">
-					<Image
-						source={require('../../assets/icons/IconsLevel/arvore1.png')}
-						className="w-72 h-72"
-					/>
-				</View>
-
-				<View>
-					<Text
-						style={{ fontFamily: 'poppins-semi-bold' }}
-						className="text-justify text-[#767676] text-base"
-					>
-						É importante cuidar do paciente, ser acompanhado pelo cliente, mas eu
-						dou um incidente desses ao mesmo tempo que dá muito trabalho e dor.
-						Para chegar aos mínimos detalhes.
-					</Text>
-				</View>
-
-				<TouchableOpacity
-					className="w-full h-16 mt-8 justify-center rounded-lg bg-[#767676] shadow-md"
-					onPress={() => navigation.navigate('LogIn')}
+			<View className="mr-2 mt-6 items-center ">
+				<Text
+					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-gray-500 text-xl"
 				>
-					<Text
-						style={{ fontFamily: 'poppins-semi-bold' }}
-						className="text-xl text-white text-center"
-					>
-						Continuar
+					{' '}
+					Você é um{' '}
+					<Text className="text-green-500 text-xl">
+						{getConsumerLevel(score)}
 					</Text>
-				</TouchableOpacity>
+					!
+				</Text>
 			</View>
+
+			<View className="items-center mt-10">
+				<Image
+					source={require('../../assets/icons/IconsLevel/arvore1.png')}
+					className="w-72 h-72"
+				/>
+			</View>
+
+			<View className="items-center mt-8 px-4">
+				<Text
+					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-justify text-yellow-500 text-xl"
+				>
+					É importante cuidar do paciente, ser acompanhado pelo cliente, mas eu
+					dou um incidente desses ao mesmo tempo que dá muito trabalho e dor.
+					Para chegar aos mínimos detalhes.
+				</Text>
+			</View>
+			<TouchableOpacity
+				className="self-center justify-center rounded-2xl bg-gray-500 w-96 h-16 mt-4"
+				onPress={() => navigation.navigate('LogIn')}
+			>
+				<Text
+					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-center text-white text-xl"
+				>
+					Continuar
+				</Text>
+			</TouchableOpacity>
 		</SafeAreaView>
 	);
 };

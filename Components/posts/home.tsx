@@ -1,6 +1,6 @@
 import { useFocusEffect } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import { getUserDetailsByEmail } from '../../utils/session/user-data';
 import { Post } from '../../utils/types/post';
 import { UserResponse } from '../../utils/types/user-response';
@@ -11,10 +11,8 @@ type PostProps = {
 
 const PostComponent = ({ post }: PostProps) => {
 	const imageUrl =
-		post.fotos && post.fotos.length > 0 ? post.fotos[0] : "";
+		post.fotos && post.fotos.length > 0 ? post.fotos[0]  : "";
 	const [userPost, setUserPost] = useState<UserResponse | null>(null);
-	const [isExpanded, setIsExpanded] = useState<boolean>(false);
-	const MAX_LINES = 3;
 
 	useFocusEffect(
 		React.useCallback(() => {
@@ -45,7 +43,7 @@ const PostComponent = ({ post }: PostProps) => {
 							resizeMode="cover"
 						/>
 					</View>
-					<Text className="text-sm" style={{ fontFamily: "poppins-semi-bold" }}>
+					<Text className="font-medium">
 						{userPost?.nome || 'Autor desconhecido'}
 					</Text>
 				</View>
@@ -63,29 +61,13 @@ const PostComponent = ({ post }: PostProps) => {
 				)}
 			</View>
 
-			<View className="mx-3 mt-4 space-y-1">
-				<Text
-					className="text-2xl text-[#767676]"
-					style={{ fontFamily: 'poppins-semi-bold' }}
-				>
+			<View className="mx-3 space-y-1">
+				<Text className="font-medium text-2xl">
 					{post.titulo || 'Sem título'}
 				</Text>
-
-				<Text
-					numberOfLines={isExpanded ? undefined : MAX_LINES}
-					className="whitespace-normal w-full text-justify mt-2.5 leading-6 text-[#767676]"
-					style={{ fontFamily: 'poppins-medium' }}
-				>
+				<Text className="whitespace-normal w-80">
 					{post.conteudo || 'Sem descrição'}
 				</Text>
-
-				{post.conteudo && post.conteudo.length > 100 && (
-					<TouchableOpacity onPress={() => setIsExpanded(!isExpanded)}>
-						<Text className="mt-2" style={{ fontFamily: 'poppins-medium' }}>
-							{isExpanded ? 'Ver menos' : 'Ver mais'}
-						</Text>
-					</TouchableOpacity>
-				)}
 			</View>
 		</View>
 	);

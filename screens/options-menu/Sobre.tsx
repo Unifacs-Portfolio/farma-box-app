@@ -18,7 +18,7 @@ const Sobre = () => {
             iconName='information-circle'
             iconSize={30}
             boxTitle='Sobre o aplicativo'
-            boxTextContent='O EngBox é uma ferramenta voltada para promover o consumo sustentável através de práticas e dicas específicas da área de Engenharia.
+            boxTextContent='O Farma Box é uma ferramenta voltada para promover o consumo sustentável através de práticas e dicas específicas da área de Engenharia.
               Ele faz parte de uma família de aplicativos que exploram a sustentabilidade em diferentes campos, como Gastronomia, Moda, Farmácia
               e Engenharia.'
           />
@@ -28,7 +28,7 @@ const Sobre = () => {
             iconSize={30}
             boxTitle='Objetivo'
             boxTextContent='Nosso objetivo é oferecer soluções práticas e acessíveis para ajudar as pessoas a adotarem hábitos mais sustentáveis,
-            aplicando conhecimentos técnicos da área de Engenharia. Com isso, buscamos contribuir para um impacto positivo no meio ambiente e 
+            aplicando conhecimentos técnicos da área de Medicina. Com isso, buscamos contribuir para um impacto positivo no meio ambiente e 
             na sociedade.'
           />
 

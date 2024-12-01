@@ -16,37 +16,37 @@ interface Developer {
 
 const developers: Developer[] = [
 	{
-		name: 'Edioelson Júnior A. B. Teixeira',
-		linkedInUrl: 'https://www.linkedin.com/in/developeredd/',
+		name: 'Allan Oliveira Teran Jaime',
+		linkedInUrl: 'https://www.linkedin.com/in/allanteran/',
 	},
 	{
-		name: 'Gabriel Silva Magalhães',
-		linkedInUrl: 'https://www.linkedin.com/in/gabriel-smagalhaes32/',
+		name: 'Amanda Márcia Sales da Silva',
+		linkedInUrl: 'https://www.linkedin.com/in/amanda-silva-80613a28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
 	},
 	{
-		name: 'Hanspeter Dietiker',
+		name: 'Douglas Barros Andrade Costa',
 		linkedInUrl: 'https://www.linkedin.com/in/hanspeterdietiker/',
 	},
 	{
-		name: 'Enzo Colombo',
-		linkedInUrl: 'https://www.linkedin.com/in/enzo-contieri-b1578326b/',
+		name: 'Jadson Mendes Barbosa',
+		linkedInUrl: 'https://www.linkedin.com/in/jadsonbarbosa1/',
 	},
 	{
-		name: 'Arthur Victor Vitoriano',
-		linkedInUrl: 'https://www.linkedin.com/',
+		name: 'Leonardo Calheira Marchesini',
+		linkedInUrl: 'http://www.linkedin.com/in/leomarchesiini',
 	},
 	{
-		name: 'Lucas Costa',
-		linkedInUrl: 'https://www.linkedin.com/',
+		name: 'Marx Lenin Muniz Vigas',
+		linkedInUrl: 'https://www.linkedin.com/in/marx-vigas-84a58928a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
 	},
 	{
-		name: 'Vitor Vitoriano',
-		linkedInUrl: 'https://www.linkedin.com/',
+		name: 'Ian Davi Menezes Alves Bomfim',
+		linkedInUrl: 'https://www.linkedin.com/in/ianmenezesss',
 	},
 	{
-		name: 'Yago Mário',
-		linkedInUrl: 'https://www.linkedin.com/',
-	},
+		name: 'Arthur Souza Lima Ra',
+		linkedInUrl: 'https://www.linkedin.com/in/arthur-souza-24453a269/',
+	}
 ];
 
 const DeveloperItem = ({ name, linkedInUrl }: Developer) => {
@@ -57,13 +57,13 @@ const DeveloperItem = ({ name, linkedInUrl }: Developer) => {
 	return (
 		<View className="flex-row items-center my-1">
 			<Text
-				className="text-base text-[#767676]"
+				className="text-base text-[#455A64]"
 				style={{ fontFamily: 'poppins-medium' }}
 			>
 				• {name}
 			</Text>
 			<TouchableOpacity onPress={handlePress} className="ml-2">
-				<Ionicons name="logo-linkedin" size={20} color="#767676" />
+				<Ionicons name="logo-linkedin" size={20} color="fff700" />
 			</TouchableOpacity>
 		</View>
 	);
@@ -73,10 +73,10 @@ export const AboutDevsBox = () => {
 	return (
 		<View className="bg-white w-11/12 p-3 rounded-lg shadow-md mb-4">
 			<View className="flex-row items-center gap-2">
-				<Ionicons name="code-slash" size={30} color={'#767676'} />
+				<Ionicons name="code-slash" size={30} color={'#ffd750'} />
 				<Text
-					className="text-xl text-[#767676]"
-					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-xl text-[#]"
+					style={{ fontFamily: 'poppins-medium' }}
 				>
 					Desenvolvedores
 				</Text>
@@ -104,16 +104,16 @@ export const AboutTextBox = ({
 	return (
 		<View className="bg-white w-11/12 p-3 rounded-lg shadow-md mb-4">
 			<View className="flex-row items-center gap-2">
-				<Ionicons name={iconName} size={iconSize} color={'#767676'} />
+				<Ionicons name={iconName} size={iconSize} color={'#ffd750'} />
 				<Text
-					className="text-xl text-[#767676] "
-					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-xl text-[#1F3B4] "
+					style={{ fontFamily: 'poppins-medium' }}
 				>
 					{boxTitle}
 				</Text>
 			</View>
 			<Text
-				className="w-full text-justify self-start text-base px-2 my-2 text-[#767676] mt-2.5"
+				className="w-full text-justify self-start text-base px-2 my-2 text-[#455A64] mt-2.5"
 				style={{ fontFamily: 'poppins-medium' }}
 			>
 				{boxTextContent}

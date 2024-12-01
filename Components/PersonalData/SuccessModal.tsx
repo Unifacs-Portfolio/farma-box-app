@@ -20,7 +20,7 @@ const SuccessModal = ({ visible, onClose }: SuccessModalProps) => {
                     <View className='my-4' >
                         <Ionicons name='checkmark-circle' size={60} color='#50B454' />
                     </View>
-                    <Text className="text-lg text-[#767676] text-center mb-4" style={{ fontFamily: 'poppins-semi-bold' }}>
+                    <Text className="text-lg text-[#F0E68C] text-center mb-4" style={{ fontFamily: 'poppins-medium' }}>
                         Alteração salva com sucesso!
                     </Text>
                 </View>

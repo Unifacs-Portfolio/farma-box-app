@@ -6,8 +6,7 @@ import {
     TextInput,
     KeyboardAvoidingView,
     Platform,
-    ScrollView,
-    Alert
+    ScrollView
 } from 'react-native'
 import React from 'react'
 import { useForm, Controller } from 'react-hook-form';
@@ -25,7 +24,7 @@ export default function ForgotPassword() {
     /* Este código retorna exceção na pagina Esqueceu sua Senha */
     const { control, handleSubmit } = useForm<ForgotFormData>();
     const navigation = useNavigation<NavigationProp>();
-    
+
     return (
         <KeyboardAvoidingView
             className='flex-1 bg-[#F9F9F9]'
@@ -52,7 +51,7 @@ export default function ForgotPassword() {
                     {/*ForgotPassword */}
                     <View className='flex justify-center items-center'>
                         <Text style={{ fontFamily: 'poppins-semi-bold' }}
-                            className='text-[#5A5A5A] mb-4 font-bold text-3xl ml-1'>Esqueceu sua senha?</Text>
+                            className='text-[#DAA520] mb-4 font-bold text-3xl ml-1'>Esqueceu sua senha?</Text>
                         <Text className='text-[#5B5B5B] ml-1 mb-8 text-justify w-[322px] font-bold  '>
                             Digite o endereço de e-mail para o qual deseja que suas informações de redefinição de senha
                             sejam enviadas.</Text>
@@ -84,7 +83,7 @@ export default function ForgotPassword() {
                             render={({ field: { value, onChange }, fieldState: { error } }) => (
                                 <>
                                     <TextInput
-                                        className='bg-[#EDEDED] border border-[#5B5B5B] shadow rounded-2xl px-4 py-4  '
+                                        className='bg-[#F8F8FF] border border-[#FFF700] shadow rounded-2xl px-4 py-4  '
                                         placeholder='Digite seu Email'
                                         onChangeText={onChange}
                                         value={value}
@@ -104,24 +103,21 @@ export default function ForgotPassword() {
 
                     {/*Button Send*/}
                     <TouchableOpacity
-                        className='w-4/5 bg-[#5A5A5A] shadow-lg py-4 mb-5 rounded-2xl'
+                        className='w-4/5 bg-[#fff700] shadow-lg py-4 mb-5 rounded-2xl'
                         onPress={handleSubmit((data) => {
-                           Alert.alert("Email enviado!")
                             console.log(data);
                         })}>
                         <Text className='text-center text-white text-lg'>Enviar</Text>
-                        
                     </TouchableOpacity>
-                    
                 </View>
                 <View className='flex-row justify-center items-center mb-4'>
 
-                        
+
                     <TouchableOpacity
                         className='shadow text-[#5A5A5A]'
                         onPress={() => navigation.navigate('LogIn')}>
                         <Text
-                            className='text-sm text-[#5A5A5A] ml-1'>Aperte Para Voltar</Text>
+                            className='text-sm text-[#dda520] ml-1'>Aperte Para Voltar</Text>
                     </TouchableOpacity>
 
                 </View>

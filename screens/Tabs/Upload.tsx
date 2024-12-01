@@ -59,7 +59,7 @@ const Upload = () => {
 			const api = await getApiAxios();
 			await api.postForm('/api/receitas', formData);
 
-
+			alert('Post criado com sucesso!');
 			setSuccessfulUploadModalVisible(true);
 		} catch (error: any) {
 			if (error.response) {
@@ -126,7 +126,7 @@ const Upload = () => {
 		titulo: titulo,
 		conteudo: conteudo,
 		tema: 'Enge',
-		subtemas: 'Enge',
+		subtemas:'Enge',
 		fotos: [
 			{
 				uri: media ?? '',
@@ -153,15 +153,24 @@ const Upload = () => {
 							<View className="bg-[#FFFFFF] w-full h-2/5 items-center justify-center rounded-lg">
 								{media ? (
 									<View className="relative flex-1 w-full h-full">
-										<Image
-											source={{ uri: media }}
-											className="w-full h-full rounded-lg"
-										/>
+										{mediaType === 'video' ? (
+											<Video
+												source={{ uri: media }}
+												className="w-full h-full rounded-lg"
+												useNativeControls
+												isLooping
+											/>
+										) : (
+											<Image
+												source={{ uri: media }}
+												className="w-full h-full rounded-lg"
+											/>
+										)}
 										<TouchableOpacity
 											onPress={clearMedia}
-											className="absolute top-2 right-2 bg-[#F9F9F9] rounded-full p-1"
+											className="absolute top-2 right-2 bg-white rounded-full p-1"
 										>
-											<Ionicons name="trash" size={24} color="#00000090" />
+											<Ionicons name="trash" size={24} color="red" />
 										</TouchableOpacity>
 									</View>
 								) : (
@@ -169,9 +178,9 @@ const Upload = () => {
 										className="items-center"
 										onPress={pickMedia}
 									>
-										<Ionicons name="add-circle" size={60} color="#00000050" />
+										<Ionicons name="add-circle" size={60} color="#fff700" />
 										<Text
-											className="text-base text-[#767676]"
+											className="text-base text-[#B8860B]"
 											style={{ fontFamily: 'poppins-medium' }}
 										>
 											Selecionar arquivo
@@ -184,10 +193,10 @@ const Upload = () => {
 								placeholder="Escreva o título aqui..."
 								value={titulo}
 								onChangeText={setTitulo}
-								className="text-lg pt-6 pb-6 text-[#767676]"
+								className="text-lg pt-6 pb-6 text-[#455A64]"
 								style={{ fontFamily: 'poppins-medium' }}
 								scrollEnabled={false}
-								maxLength={30}
+								maxLength={20}
 							/>
 
 							<View className="bg-[#FFFFFF] w-full h-52 rounded-lg p-2.5">
@@ -196,18 +205,18 @@ const Upload = () => {
 									value={conteudo}
 									onChangeText={setConteudo}
 									multiline
-									className="w-full text-sm text-[#767676]"
+									className="w-full text-sm text-[#455A64]"
 									style={{ fontFamily: 'poppins-regular' }}
 								/>
 							</View>
 
 							<TouchableOpacity
-								className="w-full h-16 items-center justify-center bg-[#767676] rounded-lg mt-8"
+								className="w-full h-16 items-center justify-center bg-[#fff700] rounded-lg mt-8"
 								onPress={handlePost}
 								disabled={isButtonDisabled}
 							>
 								<Text
-									className="text-lg text-[#FFFFFF]"
+									className="text-lg text-[#]"
 									style={{ fontFamily: 'poppins-medium' }}
 								>
 									Enviar
@@ -222,19 +231,19 @@ const Upload = () => {
 						animationType="fade"
 						onRequestClose={() => setSuccessfulUploadModalVisible(false)}
 					>
-						<View className="flex-1 justify-center items-center bg-[#00000050]">
+						<View className="flex-1 justify-center items-center">
 							<View className="bg-white w-4/5 px-6 py-2 rounded-xl items-center shadow-md">
 								<View className="my-4">
 									<Ionicons name="checkmark-circle" size={60} color="#50B454" />
 								</View>
 								<Text
-									className="text-lg text-[#767676] text-center mb-2"
+									className="text-lg text-[#1F3B4D] text-center mb-2"
 									style={{ fontFamily: 'poppins-medium' }}
 								>
 									Post enviado para validação!
 								</Text>
 								<Text
-									className="text-base text-[#767676] text-center mb-4"
+									className="text-base text-[#455A64] text-center mb-4"
 									style={{ fontFamily: 'poppins-regular' }}
 								>
 									Você será informado assim que a validação for concluída.
@@ -242,7 +251,7 @@ const Upload = () => {
 
 								<TouchableOpacity
 									onPress={() => setSuccessfulUploadModalVisible(false)}
-									className="bg-[#767676] w-full py-3 items-center justify-center rounded-md mb-4 shadow-md"
+									className="bg-[#1F3B4D] w-full py-3 items-center justify-center rounded-md mb-4 shadow-md"
 								>
 									<Text
 										className="text-white text-base"

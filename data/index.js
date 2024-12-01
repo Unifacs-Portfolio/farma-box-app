@@ -1,56 +1,56 @@
 export const data = [
-    {
-      title: 'Civil',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Eletríca',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Mecânica',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Quimica',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Arquitetura',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Software',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Automação',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Produção',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-    {
-      title: 'Computação',
-      poster: require('../assets/images/civil.png'),
-      description: 'UNIFACS',
-      icon: require('../assets/icons/icone-eng.png'),
-    },
-  ];
+  {
+    title: 'Fisioterapia',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Cremes',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Vacinas',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Remédios',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Coração',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Ervas Medicinais',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Primeiros Socorros',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Hospitais',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+  {
+    title: 'Respiração',
+    poster: require('../assets/images/civil.png'),
+    description: 'UNIFACS',
+    icon: require('../assets/icons/icone-eng.png'),
+  },
+];

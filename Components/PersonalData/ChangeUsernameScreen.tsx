@@ -52,9 +52,9 @@ const ChangeUsernameScreen = () => {
     return (
         <SafeAreaView className='flex-1 mt-4' >
             <GoBackButton title='Nome de Usuário' />
-            <Text className='text-sm text-[#1F3B4D] ml-9 mt-8 mb-2' style={{ fontFamily: 'poppins-regular' }} >Para alterar o nome de usuário, clique aqui</Text>
+            <Text className='text-sm text-[#dda520] ml-9 mt-8 mb-2' style={{ fontFamily: 'poppins-regular' }} >Para alterar o nome de usuário, clique aqui</Text>
             <View className='flex items-center flex-1'>
-                <View className='flex-row w-10/12 h-14 items-center border-2 rounded-xl border-[#B0BEC5] pl-2'>
+                <View className='flex-row w-10/12 h-14 items-center border-2 rounded-xl border-[#fffff0] pl-2'>
 
                     <Ionicons name='at' size={30} color={'#B0BEC5'} />
                     <Controller

@@ -25,7 +25,7 @@ export default function Wellcome() {
 	);
 
 	return (
-		<View className="flex-1 bg-[#F9F9F9]  items-center">
+		<View className="flex-1 bg-[#F9F9f9]  items-center">
 			<View className="justify-center items-center mt-[-30] w-full h-64 mb-10">
 				<Image
 					source={require('../../assets/images/login/ImagemDeWellcome.png')}
@@ -37,7 +37,7 @@ export default function Wellcome() {
 			</View>
 
 			<TouchableOpacity
-				className="w-4/5 bg-[#767676] shadow-lg py-3.5 mb-4 mt-[230] rounded-2xl"
+				className="w-4/5 bg-[#FFD750] shadow-lg py-3.5 mb-4 mt-[230] rounded-2xl"
 				onPress={() => navigation.navigate('Register')}
 			>
 				<Text className="text-center text-[#FFFFFF] text-xl">
@@ -46,10 +46,10 @@ export default function Wellcome() {
 			</TouchableOpacity>
 
 			<TouchableOpacity
-				className="border border-[#5A5A5A] w-4/5 bg-[#FFFFFF] shadow-lg py-3.5 mb-4 rounded-2xl"
+				className="border border-[#FFF] w-4/5 bg-[#FFd750] shadow-lg py-3.5 mb-4 rounded-2xl"
 				onPress={() => navigation.navigate('LogIn')}
 			>
-				<Text className=" text-center border-[#F9F9F9] text-[#5A5A5A] text-xl">
+				<Text className=" text-center border-[#F9F9F9] text-[#FFF] text-xl">
 					Entrar
 				</Text>
 			</TouchableOpacity>

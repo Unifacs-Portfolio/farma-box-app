@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
 	Modal,
+	SafeAreaView,
 	Text,
 	TouchableOpacity,
 	View,
@@ -10,7 +11,6 @@ import { RouteProp, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { axiosLogin } from '../../services/axios';
 import { RootStackParamList } from '../../utils/types/navigation';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Define o tipo de navegação para o componente
 type NavigationProp = StackNavigationProp<RootStackParamList>;
@@ -35,15 +35,15 @@ const Option: React.FC<OptionProps> = ({
 		<TouchableOpacity
 			accessible={true}
 			accessibilityLabel={`Opção ${optionLabel}`}
-			className={`flex-row h-16 w-full items-center rounded-lg mb-4 border border-[#76767650] ${selectedOption === index ? 'bg-[#3c3d3d]' : 'bg-[#767676]'}`}
+			className={`flex-row h-16 items-center rounded-lg my-2 w-96 ${selectedOption === index ? 'bg-yellow-400' : 'bg-yellow-500'}`}
 			onPress={() => setSelectedOption(index)}
 		>
 			<View
-				className={`rounded-xl h-10 w-10 mr-2 justify-center items-center ml-5 border border-[#76767650] ${selectedOption === index ? 'bg-[#767676]' : 'bg-[#3c3d3d]'}`}
+				className={`rounded-xl h-10 w-10 justify-center items-center ml-5 ${selectedOption === index ? 'bg-black-500' : 'bg-gray-400'}`}
 			>
 				<Text
 					style={{ fontFamily: 'poppins-semi-bold' }}
-					className="text-white"
+					className="text-red"
 				>
 					{optionLabel}
 				</Text>
@@ -51,7 +51,7 @@ const Option: React.FC<OptionProps> = ({
 			<View className="flex-1 mr-14 justify-center items-center">
 				<Text
 					style={{ fontFamily: 'poppins-semi-bold' }}
-					className={`text-center text-lg ${selectedOption === index ? 'text-white' : 'text-white'}`}
+					className={`text-center text-base ${selectedOption === index ? 'text-gray-500' : 'text-white'}`}
 				>
 					{option}
 				</Text>
@@ -72,26 +72,28 @@ const CustomAlert = ({
 	message: string;
 	onClose: () => void;
 }) => (
-	<Modal
-		transparent={true}
-		animationType="fade"
-		visible={visible}
-	>
-		<View className="flex-1 justify-center items-center bg-[#00000050]">
-			<View className="bg-white w-3/4 p-6 rounded-lg shadow-md">
-				<Text className="text-[#767676] text-lg mb-4 text-center" style={{ fontFamily: 'poppins-semi-bold' }} >
+	<Modal transparent={true} animationType="fade" visible={visible}>
+		<View className="flex-1 justify-center items-center bg-black bg-opacity-50">
+			<View className="bg-white rounded-lg p-6 w-80">
+				<Text
+					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-gray-500 text-lg mb-4 text-center"
+				>
 					{title}
 				</Text>
-				<Text className="text-black text-base mb-6 text-center" style={{ fontFamily: 'poppins-regular' }} >
+				<Text
+					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-black text-base mb-6 text-center"
+				>
 					{message}
 				</Text>
 				<TouchableOpacity
-					className="bg-[#767676] w-full py-3 items-center justify-center rounded-md"
+					className="bg-yellow-500 rounded-lg p-3"
 					onPress={onClose}
 				>
 					<Text
-						className="text-base text-white"
-						style={{ fontFamily: 'poppins-medium' }}
+						style={{ fontFamily: 'poppins-semi-bold' }}
+						className="text-yellow text-center"
 					>
 						Fechar
 					</Text>
@@ -115,47 +117,41 @@ const Quiz = ({ route }: QuizProps) => {
 		{
 			id: '1',
 			question:
-				'Qual dos seguintes materiais é mais comumente utilizado na construção de pontes devido à sua alta resistência à tração e compressão?',
-			option: ['Concreto', 'Alumínio', 'Aço', 'Madeira'],
+				'Qual o principal ingrediente ativo de um protetor solar?',
+			option: ['Óleo de coco', 'Filtro UV', 'Ácido salicílico', 'Glicerina'],
 			correctOption: 2,
 		},
 		{
 			id: '2',
 			question:
-				'Qual é a unidade de medida de tensão no Sistema Internacional (SI)?',
-			option: ['Newton (N)', 'Pascal (Pa)', 'Joule (J)', 'Watt (W)'],
+				'Qual é o objetivo do ácido hialurônico em cosméticos?',
+			option: ["Hidratar a pele", "Esfoliar a pele", "Proteger contra o sol", "Clarear manchas"],
 			correctOption: 1,
 		},
 		{
 			id: '3',
 			question:
-				'Qual é o principal gás que causa o efeito estufa e está diretamente relacionado às atividades humanas?',
+				'O que a vitamina C promove na pele?',
 			option: [
-				'Oxigênio',
-				'Metano',
-				'Dióxido de enxofre',
-				'Dióxido de carbono',
+				"Elasticidade", "Redução de rugas", "Clareamento e antioxidante", "Secura"
 			],
 			correctOption: 3,
 		},
 		{
 			id: '4',
-			question: 'Qual é a unidade de medida de resistência elétrica?',
-			option: ['Volt', 'Ampère', 'Ohm', 'Watt'],
-			correctOption: 2,
+			question: 'Qual cosmético é utilizado para limpeza profunda da pele?',
+			option: ["Máscara de argila", "Base líquida", "Protetor solar", "Blush"],
+			correctOption: 1,
 		},
 
 		{
 			id: '5',
 			question:
-				'Em um sistema hidráulico, qual componente é utilizado para armazenar energia sob a forma de pressão?',
+				'Qual dos ingredientes é mais comum em cremes antienvelhecimento?',
 			option: [
-				'Válvula de controle',
-				'Cilindro hidráulico',
-				'Bomba hidráulica',
-				'Acumulador hidráulico',
+				"Retinol", "Parafina", "Silício", "Manteiga de karité"
 			],
-			correctOption: 3,
+			correctOption: 1,
 		},
 	];
 
@@ -187,7 +183,7 @@ const Quiz = ({ route }: QuizProps) => {
 	};
 
 	return (
-		<SafeAreaView className="items-center">
+		<SafeAreaView className="h-full">
 			{/* Alerta de seleção de opção */}
 			<CustomAlert
 				visible={alertVisible}
@@ -225,14 +221,22 @@ const Quiz = ({ route }: QuizProps) => {
 				}}
 			/>
 
-			<View className="items-center w-10/12 mt-8">
-				<Text className="text-3xl text-[#767676]" style={{ fontFamily: 'poppins-semi-bold' }} >Eng Box Quiz</Text>
-				<Text className="text-lg text-justify text-[#767676] mt-8" style={{ fontFamily: 'poppins-medium' }} >
+			<View className="items-center p-5">
+				<Text
+					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-yellow-500 text-2xl"
+				>
+					Quiz
+				</Text>
+				<Text
+					style={{ fontFamily: 'poppins-semi-bold' }}
+					className="text-black text-lg mt-10 ml-3"
+				>
 					{questions[currentQuestion].question}
 				</Text>
 
 				{/* Renderiza opções */}
-				<View className="my-8">
+				<View className="mt-10">
 					{questions[currentQuestion].option.map((option, index) => (
 						<Option
 							key={index}
@@ -245,14 +249,14 @@ const Quiz = ({ route }: QuizProps) => {
 				</View>
 
 				<TouchableOpacity
-					className={`bg-[#767676] rounded-lg w-full h-16 p-4 items-center justify-center border border-[#76767650] shadow-md`}
+					className={`mt-10 ${selectedOption !== null ? 'bg-yellow-500' : 'bg-yellow-400'} rounded-2xl w-96 h-16 p-4`}
 					onPress={handleNextQuestion}
 				>
 					<Text
 						style={{ fontFamily: 'poppins-semi-bold' }}
-						className="text-white text-lg"
+						className="text-red text-center text-base"
 					>
-						{currentQuestion < questions.length - 1 ? 'Próxima Pergunta' : 'Concluir'}
+						Próxima Pergunta
 					</Text>
 				</TouchableOpacity>
 			</View>

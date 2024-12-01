@@ -94,7 +94,7 @@ export default function LogIn() {
 						{/*Wellcome*/}
 						<Text
 							style={{ fontFamily: 'poppins-semi-bold' }}
-							className="text-[#5A5A5A] mb-3 font-bold text-3xl ml-2"
+							className="text-[#daa520] mb-3 font-bold text-3xl ml-2"
 						>
 							Bem-vindo de Volta!
 						</Text>
@@ -131,7 +131,7 @@ export default function LogIn() {
 								}) => (
 									<>
 										<TextInput
-											className="bg-[#EDEDED] border border-[#5B5B5B] shadow px-4 py-4 rounded-2xl "
+											className="bg-[#f8f8ff] border border-[#fff700] shadow px-4 py-4 rounded-2xl "
 											placeholder="Email"
 											value={value}
 											onChangeText={onChange}
@@ -158,27 +158,32 @@ export default function LogIn() {
 								<Text className="ml-1 text-[#5A5A5A] text-base" style={{ fontFamily: "poppins-medium" }}>Senha</Text>
 							</View>
 
-							<Controller
-								control={control}
-								name="password"
-								rules={{
-									required: 'A senha é obrigatória',
-									minLength: {
-										value: 3,
-										message: 'A senha deve ter pelo menos 3 caracteres',
-									},
-									maxLength: {
-										value: 51,
-										message: 'Limite excedido de caracteres',
-									},
-									pattern: {
-										value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-										message: 'Senha inválida. Por favor, verifique e tente novamente.',
-									},
-								}}
-								render={({ field: { value, onChange }, fieldState: { error } }) => (
-									<View className="w-full">
-										<View className="flex-row items-center rounded-2xl pr-2 justify-between bg-[#EDEDED] border border-[#5B5B5B]">
+							<View className="flex-row w-full items-center  rounded-2xl pr-2 justify-between bg-[#f8f8ff] border border-[#fff700]">
+								<Controller
+									control={control}
+									name="password"
+									rules={{
+										required: 'A senha é obrigatoria',
+										minLength: {
+											value: 3,
+											message: 'A senha deve ter pelo menos 3 caracteres',
+										},
+										maxLength: {
+											value: 51,
+											message: 'Limite excedido de caracteres',
+										},
+										pattern: {
+											value:
+												/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+											message:
+												'Senha inválida. Por favor, verifique e tente novamente.',
+										},
+									}}
+									render={({
+										field: { value, onChange },
+										fieldState: { error },
+									}) => (
+										<>
 											<TextInput
 												className="rounded-2xl px-4 py-4 w-11/12"
 												placeholder="Digite sua senha"
@@ -187,44 +192,43 @@ export default function LogIn() {
 												secureTextEntry={!showPassword}
 												autoCapitalize="none"
 											/>
-											<TouchableOpacity
-												onPress={() => setShowPassword(!showPassword)}
-												className="items-center justify-center"
-											>
-												<Ionicons
-													name={showPassword ? 'eye-off' : 'eye'}
-													size={24}
-													color={'#5A5A5A'}
-												/>
-											</TouchableOpacity>
-										</View>
-										{error && (
-											<Text
-												style={{ fontFamily: 'poppins-semi-bold' }}
-												className="text-[#ff375b] text-xs mt-2"
-											>
-												{error.message}
-											</Text>
-										)}
-									</View>
-								)}
-							/>
-
+											{error && (
+												<Text
+													style={{ fontFamily: 'poppins-semi-bold' }}
+													className="text-[#ff375b] text-xs ml-2"
+												>
+													{error.message}
+												</Text>
+											)}
+										</>
+									)}
+								/>
+								<TouchableOpacity
+									onPress={() => setShowPassword(!showPassword)}
+									className="items-center justify-center"
+								>
+									<Ionicons
+										name={showPassword ? 'eye-off' : 'eye'}
+										size={24}
+										color={'#5A5A5A'}
+									/>
+								</TouchableOpacity>
+							</View>
 						</View>
 
 						{/*Remember me and ForgotPassword */}
 						<View className="w-full flex-row justify-around mb-6">
 							<View className="flex-row items-center">
 								<TouchableOpacity
-									className={`shadow-sm w-6 h-6 rounded-sm border-2 ${rememberMe ? 'bg-[#D9D9D9]' : 'bg-white border-[#D9D9D9]'}`}
+									className={`shadow-sm w-6 h-6 rounded-sm border-2 ${rememberMe ? 'bg-[#fff700]' : 'bg-white border-[#fff700]'}`}
 									onPress={() => setRememberMe(!rememberMe)}
 								>
 									{rememberMe && (
-										<View className="w-full h-full bg-[#5A5A5A]">
+										<View className="w-full h-full bg-[#fff700]">
 											<Ionicons
 												name="checkbox-outline"
 												size={20}
-												color="white"
+												color="black"
 											/>
 										</View>
 									)}
@@ -234,7 +238,7 @@ export default function LogIn() {
 								<TouchableOpacity
 									onPress={() => navigation.navigate('ForgotPassword')}
 								>
-									<Text className="shadow text-sm text-[#5A5A5A] ml-6 " style={{ fontFamily: "poppins-regular" }} >
+									<Text className="shadow text-sm text-[#ffa520] ml-6 " style={{ fontFamily: "poppins-regular" }} >
 										Esqueceu sua Senha?
 									</Text>
 								</TouchableOpacity>
@@ -243,7 +247,7 @@ export default function LogIn() {
 
 						{/*Button Enter */}
 						<TouchableOpacity
-							className={'w-full bg-[#5A5A5A] shadow-lg py-4 mb-4 rounded-2xl'}
+							className={'w-full bg-[#fff700] shadow-lg py-4 mb-4 rounded-2xl'}
 							onPress={handleSubmit(handleLoginFormSubmit)}
 							disabled={isSubmitting}
 						>
@@ -259,7 +263,7 @@ export default function LogIn() {
 								className="shadow text-[#767676]"
 								onPress={() => navigation.navigate('Register')}
 							>
-								<Text className="text-[#5A5A5A] ml-1 underline" style={{ fontFamily: "poppins-medium" }}>
+								<Text className="text-[#ffa520] ml-1 underline" style={{ fontFamily: "poppins-medium" }}>
 									Registre-se
 								</Text>
 							</TouchableOpacity>

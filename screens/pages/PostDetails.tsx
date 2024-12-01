@@ -107,7 +107,7 @@ const PostDetails = () => {
 								onDismiss={() => setContextMenuVisible(false)}
 								anchor={
 									<TouchableOpacity onPress={() => setContextMenuVisible(true)}>
-										<Ionicons name='ellipsis-vertical' size={24} color={"#767676"} />
+										<Ionicons name='ellipsis-vertical' size={24} color={"#fff700"} />
 									</TouchableOpacity>
 								}
 								contentStyle={{ backgroundColor: '#F9F9F9' }}
@@ -121,7 +121,7 @@ const PostDetails = () => {
 									leadingIcon={({ size }) => (
 										<Ionicons name="trash" size={size} color="#767676" />
 									)}
-									titleStyle={{ color: '#767676', fontFamily: "poppins-semi-bold" }}
+									titleStyle={{ color: '#dda520', fontFamily: "poppins-semi-bold" }}
 								/>
 							</Menu>
 						</View>

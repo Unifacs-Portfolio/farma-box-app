@@ -13,7 +13,7 @@ const HeaderMenu = () => {
 
     return (
         <TouchableOpacity onPress={() => navigation.navigate('MoreOptions')} >
-            <Ionicons name="menu-outline" size={30} color="#303030" />
+            <Ionicons name="menu-outline" size={30} color="#" />
         </TouchableOpacity>
     )
 }

@@ -8,15 +8,15 @@ import { SearchBar } from '@rneui/themed';
 import axios from 'axios';
 
 const categories = [
-    { label: 'Civil', icon: require('../../assets/icons/iconsFilter/icone-eng.png') },
-    { label: 'Quimica', icon: require('../../assets/icons/iconsFilter/quimico.png') },
-    { label: 'Arquitetura', icon: require('../../assets/icons/iconsFilter/projeto-da-casa.png') },
-    { label: 'Eletrica', icon: require('../../assets/icons/iconsFilter/energia-eletrica.png') },
-    { label: 'Mecanica', icon: require('../../assets/icons/iconsFilter/engenharia-mecanica.png') },
-    { label: 'Software', icon: require('../../assets/icons/iconsFilter/engenharia-de-software.png') },
-    { label: 'Automacao', icon: require('../../assets/icons/iconsFilter/linha-de-montagem.png') },
-    { label: 'Producao', icon: require('../../assets/icons/iconsFilter/recursos-humanos.png') },
-    { label: 'Computacao', icon: require('../../assets/icons/iconsFilter/computacao-em-nuvem.png') },
+    { label: 'Fisioterapia', icon: require('../../assets/icons/iconsFilter/icone-eng.png') },
+    { label: 'Remédios', icon: require('../../assets/icons/iconsFilter/quimico.png') },
+    { label: 'Coração', icon: require('../../assets/icons/iconsFilter/projeto-da-casa.png') },
+    { label: 'Cremes', icon: require('../../assets/icons/iconsFilter/energia-eletrica.png') },
+    { label: 'Vacinas', icon: require('../../assets/icons/iconsFilter/engenharia-mecanica.png') },
+    { label: 'Ervas Medicinais', icon: require('../../assets/icons/iconsFilter/engenharia-de-software.png') },
+    { label: 'Primeiros Socorros', icon: require('../../assets/icons/iconsFilter/linha-de-montagem.png') },
+    { label: 'Hospitais', icon: require('../../assets/icons/iconsFilter/recursos-humanos.png') },
+    { label: 'Respiração', icon: require('../../assets/icons/iconsFilter/computacao-em-nuvem.png') },
 ];
 
 
@@ -112,7 +112,7 @@ const CategoryComponent = () => {
             <View className="mt-8 mb-2">
 					<View className="mx-7">
 						<Text
-							className="text-[25px] text-[#4A4A4A]"
+							className="text-[25px] text-[#ffd750]"
 							style={{ fontFamily: 'poppins-medium', opacity: 0.6 }}
 						>
 							Pesquise
@@ -121,7 +121,7 @@ const CategoryComponent = () => {
                         platform='ios'
                         placeholder="Digite Aqui"
                         cancelButtonTitle=""
-                        placeholderTextColor="#000"
+                        placeholderTextColor="#dda520"
                         onChangeText={updateSearch}
                         value={search}
                         containerStyle={{
@@ -133,7 +133,7 @@ const CategoryComponent = () => {
                         clearIcon={{
                             name: 'trash',
                             type: 'ionicon',
-                            color: 'red',
+                            color: 'yellow',
                             size: 20,
                         }}
                         searchIcon={{
@@ -147,13 +147,13 @@ const CategoryComponent = () => {
 					</View>
 				</View>
             <View className='mx-7 mb-3'>
-                <Text className='text-base text-[#4A4A4A]' style={{ fontFamily: 'poppins-medium', opacity: 0.6 }}>Filtre Por Categoria</Text>
+                <Text className='text-base text-[#ffd750]' style={{ fontFamily: 'poppins-medium', opacity: 0.6 }}>Filtre Por Categoria</Text>
             </View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} className='ml-2'>
                 {categories.map((category, index) => (
                     <TouchableOpacity
                         key={index}
-                        className={`bg-white h-13 mb-2 p-4 mx-3 rounded-xl shadow flex-row items-center justify-between ${selectedCategories.includes(category.label) ? 'bg-[#78CAD2]' : ''}`}
+                        className={`bg-white h-13 mb-2 p-4 mx-3 rounded-xl shadow flex-row items-center justify-between ${selectedCategories.includes(category.label) ? 'bg-[#f0e68c]' : ''}`}
                         onPress={() => {toggleCategory(category.label); setLoading(true); setCards(true) }}
                     >
                         <Text className={`${selectedCategories.includes(category.label) ? 'text-white' : 'text-black'}`} style={{ fontFamily: 'poppins-medium' }}>{category.label}</Text>

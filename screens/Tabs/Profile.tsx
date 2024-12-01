@@ -24,11 +24,9 @@ const Profile = () => {
 		try {
 			const api = await getApiAxios();
 			const response = await api.get('/api/Enge/receitas');
-			const userPosts = response.data
-			.filter((posts: Post) => posts.idUsuario === userEmail)
-			.sort((a: Post, b: Post) => new Date(b.dataCriacao).getTime() - new Date(a.dataCriacao).getTime());
-				
-			
+			const userPosts = response.data.filter(
+				(posts: Post) => posts.idUsuario === userEmail
+			);
 			setUserPostagens(userPosts);
 			console.log('Postagens filtradas', userPosts)
 

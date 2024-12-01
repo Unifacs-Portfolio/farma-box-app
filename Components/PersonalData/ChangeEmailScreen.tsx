@@ -61,14 +61,14 @@ const ChangeEmailScreen = () => {
 		<SafeAreaView className="flex-1 mt-4">
 			<GoBackButton title="Email" />
 			<Text
-				className="text-sm text-[#767676] ml-9 mt-8 mb-2"
-				style={{ fontFamily: 'poppins-medium' }}
+				className="text-sm text-[#dda520] ml-9 mt-8 mb-2"
+				style={{ fontFamily: 'poppins-regular' }}
 			>
 				Para alterar o email, clique aqui
 			</Text>
 			<View className="flex items-center flex-1">
-				<View className="flex-row w-10/12 h-14 items-center border-2 rounded-xl border-[#767676] pl-2">
-					<Ionicons name="mail" size={30} color={'#76767670'} />
+				<View className="flex-row w-10/12 h-14 items-center border-2 rounded-xl border-[#fffff0] pl-2">
+					<Ionicons name="mail" size={30} color={'#B0BEC5'} />
 					<Controller
 						control={control}
 						name="email"
@@ -96,7 +96,7 @@ const ChangeEmailScreen = () => {
 									setIsChanged(text !== user?.email);
 								}}
 								onBlur={onBlur}
-								className="w-11/12 h-full pl-2 text-[#767676] text-base"
+								className="w-11/12 h-full pl-2 text-[#B0B3C5] text-base"
 								style={{ fontFamily: 'poppins-medium' }}
 							/>
 						)}
