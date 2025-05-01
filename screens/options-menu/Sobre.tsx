@@ -18,7 +18,7 @@ const Sobre = () => {
             iconName='information-circle'
             iconSize={30}
             boxTitle='Sobre o aplicativo'
-            boxTextContent='O Farma Box é uma ferramenta voltada para promover o consumo sustentável através de práticas e dicas específicas da área de Engenharia.
+            boxTextContent='O Farma Box é uma ferramenta voltada para promover o consumo sustentável através de práticas e dicas específicas da área da Medicina.
               Ele faz parte de uma família de aplicativos que exploram a sustentabilidade em diferentes campos, como Gastronomia, Moda, Farmácia
               e Engenharia.'
           />

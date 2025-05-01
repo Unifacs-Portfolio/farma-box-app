@@ -23,7 +23,7 @@ const Profile = () => {
 	const fetchUserPosts = async (userEmail: string) => {
 		try {
 			const api = await getApiAxios();
-			const response = await api.get('/api/Enge/receitas');
+			const response = await api.get('/api/Cosme/receitas');
 			const userPosts = response.data.filter(
 				(posts: Post) => posts.idUsuario === userEmail
 			);

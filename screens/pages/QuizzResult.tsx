@@ -65,9 +65,7 @@ const QuizzResult = ({ route }: QuizResultProps) => {
 					style={{ fontFamily: 'poppins-semi-bold' }}
 					className="text-justify text-yellow-500 text-xl"
 				>
-					É importante cuidar do paciente, ser acompanhado pelo cliente, mas eu
-					dou um incidente desses ao mesmo tempo que dá muito trabalho e dor.
-					Para chegar aos mínimos detalhes.
+					É importante cuidar do meio ambiente sempre, pois é com ele que conseguimos deixar o mundo melhor
 				</Text>
 			</View>
 			<TouchableOpacity
@@ -76,7 +74,7 @@ const QuizzResult = ({ route }: QuizResultProps) => {
 			>
 				<Text
 					style={{ fontFamily: 'poppins-semi-bold' }}
-					className="text-center text-white text-xl"
+					className="text-center text-yellow text-xl"
 				>
 					Continuar
 				</Text>

@@ -50,14 +50,14 @@ const Upload = () => {
 
 			const formData = new FormData();
 			formData.append('files', imageCover);
-			formData.append('tema', 'Enge');
-			formData.append('subtema', 'Enge');
+			formData.append('tema', 'Cosme');
+			formData.append('subtema', 'Cosme');
 			formData.append('idUsuario', user?.email ?? '');
 			formData.append('titulo', data.titulo);
 			formData.append('conteudo', data.conteudo);
 
 			const api = await getApiAxios();
-			await api.postForm('/api/receitas', formData);
+			await api.postForm('/api/Cosme/receitas', formData);
 
 			alert('Post criado com sucesso!');
 			setSuccessfulUploadModalVisible(true);
@@ -125,8 +125,8 @@ const Upload = () => {
 	const uploadData: UploadFormData = {
 		titulo: titulo,
 		conteudo: conteudo,
-		tema: 'Enge',
-		subtemas:'Enge',
+		tema: 'Cosme',
+		subtemas:'Cosme',
 		fotos: [
 			{
 				uri: media ?? '',

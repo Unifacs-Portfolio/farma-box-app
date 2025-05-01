@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
 
                 <Text
                     style={{ fontFamily: 'poppins-semi-bold' }}
-                    className="text-[#] mb-5 font-bold text-3xl shadow-sm text-center mt-5 ml-1"
+                    className="text-[#fff750] mb-5 font-bold text-3xl shadow-sm text-center mt-5 ml-1"
                 >
                     Política de Privacidade
                 </Text>
@@ -17,10 +17,10 @@ export default function PrivacyPolicy() {
            
                 <View className='bg-white shadow-lg rounded-xl p-5 w-full mb-5'>
                     <View className='flex-row items-center mb-3'>
-                        <FontAwesome name="info-circle" size={24} color="#1F3B4D" />
+                        <FontAwesome name="info-circle" size={24} color="#fff750" />
                         <Text
                             style={{ fontFamily: 'poppins-semi-bold' }}
-                            className="text-[#1F3B4D] text-xl font-bold ml-2"
+                            className="text-[#] text-xl font-bold ml-2"
                         >
                             Informações que Coletamos
                         </Text>
@@ -36,10 +36,10 @@ export default function PrivacyPolicy() {
                 
                 <View className='bg-white shadow-lg rounded-xl p-5 w-full mb-5'>
                     <View className='flex-row items-center mb-3'>
-                        <FontAwesome name="cogs" size={24} color="#1F3B4D" />
+                        <FontAwesome name="cogs" size={24} color="#fff750" />
                         <Text
                             style={{ fontFamily: 'poppins-semi-bold' }}
-                            className="text-[#1F3B4D] text-xl font-bold ml-2"
+                            className="text-[#] text-xl font-bold ml-2"
                         >
                             Como Usamos Suas Informações
                         </Text>
@@ -55,10 +55,10 @@ export default function PrivacyPolicy() {
                
                 <View className='bg-white shadow-lg rounded-xl p-5 w-full mb-5'>
                     <View className='flex-row items-center mb-3'>
-                        <FontAwesome name="share-alt" size={24} color="#1F3B4D" />
+                        <FontAwesome name="share-alt" size={24} color="#fff750" />
                         <Text
                             style={{ fontFamily: 'poppins-semi-bold' }}
-                            className="text-[#1F3B4D] text-xl font-bold ml-2"
+                            className="text-[#] text-xl font-bold ml-2"
                         >
                             Compartilhamento de Informações
                         </Text>
@@ -74,10 +74,10 @@ export default function PrivacyPolicy() {
                
                 <View className='bg-white shadow-lg rounded-xl p-5 w-full mb-5'>
                     <View className='flex-row items-center mb-3'>
-                        <FontAwesome name="lock" size={24} color="#1F3B4D" />
+                        <FontAwesome name="lock" size={24} color="#fff750" />
                         <Text
                             style={{ fontFamily: 'poppins-semi-bold' }}
-                            className="text-[#1F3B4D] text-xl font-bold ml-2"
+                            className="text-[#] text-xl font-bold ml-2"
                         >
                             Segurança das Informações
                         </Text>
@@ -94,10 +94,10 @@ export default function PrivacyPolicy() {
                 
                 <View className='bg-white shadow-lg rounded-xl p-5 w-full'>
                     <View className='flex-row items-center mb-3'>
-                        <FontAwesome name="file-text" size={24} color="#1F3B4D" />
+                        <FontAwesome name="file-text" size={24} color="#fff750" />
                         <Text
                             style={{ fontFamily: 'poppins-semi-bold' }}
-                            className="text-[#1F3B4D] text-xl font-bold ml-2"
+                            className="text-[#] text-xl font-bold ml-2"
                         >
                             Alterações na Política
                         </Text>

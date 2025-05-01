@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Eng-Box3",
-    "slug": "Eng-Box3",
+    "name": "Farma-Box",
+    "slug": "Farma-Box",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/login/LogoAppHome.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -18,7 +18,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.douglasthebest.FarmaBox"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,6 +36,11 @@
         }
       ],
       "expo-secure-store"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "be6099c2-2d14-4fc0-8058-2a55bef82ce4"
+      }
+    }
   }
 }

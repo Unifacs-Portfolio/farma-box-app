@@ -18,7 +18,7 @@ const Home = () => {
 	const fetchPosts = async () => {
 		try {
 			const api = await getApiAxios();
-			const response = await api.get('/api/Enge/receitas');
+			const response = await api.get('/api/Cosme/receitas');
 
 			setPosts(response.data);
 		} catch (error) {
