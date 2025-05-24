@@ -1,20 +1,23 @@
+// babel.config.js
 module.exports = (api) => {
 	api.cache(true);
 	return {
-		presets: ['babel-preset-expo'],
-		plugins: [
+		presets: [
+			['babel-preset-expo', { jsxImportSource: 'nativewind' }],
 			'nativewind/babel',
-			'react-native-reanimated/plugin',
-			'module:react-native-dotenv',
+		],
+		plugins: [
 			[
 				'module-resolver',
 				{
-					root: ['./'], // Define o diretório raiz
+					extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+					root: ['./'],
 					alias: {
 						'@assets': './assets',
 					},
 				},
 			],
+			'react-native-reanimated/plugin', // sempre por último
 		],
 	};
 };

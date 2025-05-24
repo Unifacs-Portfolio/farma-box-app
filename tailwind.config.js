@@ -5,6 +5,7 @@ module.exports = {
 		'./screens/**/*.{js,jsx,ts,tsx}',
 		'./Components/**/*.{js,jsx,ts,tsx}',
 	],
+	presets: [require('nativewind/preset')],
 	theme: {
 		extend: {
 			height: {
