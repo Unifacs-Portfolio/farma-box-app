@@ -1,3 +1,4 @@
+import "./global.css"
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {

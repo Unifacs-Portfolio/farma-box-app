@@ -11,6 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "experiments": {
+      "tsconfigPaths": true
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -25,7 +28,8 @@
       "package": "com.douglasthebest.FarmaBox"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-font",
